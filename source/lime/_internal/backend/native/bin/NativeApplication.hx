@@ -164,6 +164,15 @@ class NativeApplication
 		#end
 	}
 
+	public function getDeviceOrientation():Orientation
+	{
+		#if (!macro && lime_cffi)
+		return cast NativeCFFI.lime_system_get_device_orientation();
+		#else
+		return UNKNOWN;
+		#end
+	}
+
 	private function handleApplicationEvent():Void
 	{
 		switch (applicationEventInfo.type)
@@ -352,6 +361,27 @@ class NativeApplication
 			}
 		}
 	}
+
+	private function handleOrientationEvent():Void
+	{
+		var orientation:Orientation = cast orientationEventInfo.orientation;
+		var display = orientationEventInfo.display;
+		switch (orientationEventInfo.type)
+		{
+			case DISPLAY_ORIENTATION_CHANGE:
+				parent.onDisplayOrientationChange.dispatch(display, orientation);
+			case DEVICE_ORIENTATION_CHANGE:
+				parent.onDeviceOrientationChange.dispatch(orientation);
+		}
+	}
+
+	#if android
+	private function handleJNIOrientationEvent(newOrientation:Int):Void
+	{
+		var orientation:Orientation = cast newOrientation;
+		parent.onDeviceOrientationChange.dispatch(orientation);
+	}
+	#end
 
 	private function handleRenderEvent():Void
 	{
@@ -979,3 +1009,47 @@ class NativeApplication
 	var WINDOW_SHOW = 13;
 	var WINDOW_HIDE = 14;
 }
+
+@:keep /*private*/ class OrientationEventInfo
+{
+	public var orientation:Int;
+	public var display:Int;
+	public var type:OrientationEventType;
+
+	public function new(type:OrientationEventType = null, orientation:Int = 0, display:Int = -1)
+	{
+		this.type = type;
+		this.orientation = orientation;
+		this.display = display;
+	}
+
+	public function clone():OrientationEventInfo
+	{
+		return new OrientationEventInfo(type, orientation, display);
+	}
+}
+
+#if (haxe_ver >= 4.0) private enum #else @:enum private #end abstract OrientationEventType(Int)
+{
+	var DISPLAY_ORIENTATION_CHANGE = 0;
+	var DEVICE_ORIENTATION_CHANGE = 1;
+}
+
+#if android
+@:keep
+private class OrientationChangeListener implements JNISafety
+{
+	private var callback:Int->Void;
+
+	public function new(callback:Int->Void)
+	{
+		this.callback = callback;
+	}
+
+	@:runOnMainThread
+	public function onOrientationChanged(orientation:Int):Void
+	{
+		callback(orientation);
+	}
+}
+#end

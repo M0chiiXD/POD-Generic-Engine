@@ -461,6 +461,12 @@ import lime.math.Vector2;
 	public function clear(red:Float = 0, green:Float = 0, blue:Float = 0, alpha:Float = 1, depth:Float = 1, stencil:UInt = 0,
 			mask:UInt = Context3DClearMask.ALL):Void
 	{
+		__clear(false, red, green, blue, alpha, depth, stencil, mask);
+	}
+
+	@:noCompletion private function __clear(useScissor:Bool, red:Float = 0, green:Float = 0, blue:Float = 0, alpha:Float = 1, depth:Float = 1,
+			stencil:UInt = 0, mask:UInt = Context3DClearMask.ALL)
+	{
 		__flushGLFramebuffer();
 		__flushGLViewport();
 

@@ -4,8 +4,10 @@
 	<print pretty="true">Preparing installation...</print>
 
 		<!-- OpenFL & Lime (Required for Flixel) -->
-		<git name="openfl" version="9.4.0"/>
-		<lib name="lime" version="8.1.2" />
+		<lib name="openfl" version="9.5.2"/>
+		<lib name="lime" version="8.3.2"/>
+
+		<git name="foxlite" url="https://github.com/dwdvIl/foxlite" skipDeps="false"/>
 
 		<!-- Flixel -->
 		<git name="flixel" url="https://github.com/M0chiiXD/pod-flixel" ref="dev" />
@@ -15,11 +17,10 @@
 		<git name="hscript-improved" url="https://github.com/CodenameCrew/hscript-improved" ref="codename-dev" />
 		<git name="hxdiscord_rpc" url="https://github.com/CodenameCrew/cne-hxdiscord_rpc" ref="old" skipDeps="true" />
 		<lib name="funkin-modchart" skipDeps="true" />
-		<lib name="hxvlc" version="2.3.0" skipDeps="true" />
+		<git name="hxvlc" url="https://github.com/FNF-PSX-Edition/hxvlc-psx" skipDeps="true" />
 
 		<!-- Documentation and other features -->
 		<!-- <git name="away3d" url="https://github.com/CodenameCrew/away3d" /> -->
-		<git name="foxlite" url="https://github.com/dwdvIl/foxlite" skipDeps="true"/>
 
 		<!-- <lib name="dox" /> -->
 		<lib name="markdown" />
