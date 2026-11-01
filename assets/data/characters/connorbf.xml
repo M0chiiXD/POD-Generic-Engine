@@ -1,12 +1,13 @@
 <!DOCTYPE codename-engine-character>
-<character y="136" scale="0.9" flipX="true" isPlayer="true" icon="connorbf">
-	<anim name="idle" anim="connorbf idle" fps="12"/>
-	<anim name="singDOWN" anim="connorbf down" x="1" y="3.5" fps="12"/>
-	<anim name="singRIGHT" anim="connorbf right" x="-1.75" y="3.25" fps="12"/>
-	<anim name="singLEFT" anim="connorbf left" x="-4" y="3.75" fps="12"/>
-	<anim name="singUP" anim="connorbf up" x="6.25" y="-6.25" fps="12"/>
-	<anim name="singDOWNmiss" anim="connorbf miss" x="3.75" y="2"/>
-	<anim name="singUPmiss" anim="connorbf miss"/>
-	<anim name="singLEFTmiss" anim="connorbf miss"/>
-	<anim name="singRIGHTmiss" anim="connorbf miss"/>
+<character y="138" scale="0.78" flipX="true" isPlayer="true">
+	<anim name="idle" anim="idle" fps="12"/>
+	<anim name="singDOWN" anim="down" x="1" y="3.5" fps="12"/>
+	<anim name="singRIGHT" anim="right" x="-17.31" y="3.25" fps="12"/>
+	<anim name="singLEFT" anim="left" x="42.67" y="-1.81" fps="12"/>
+	<anim name="singUP" anim="up" x="6.25" y="-6.25" fps="12"/>
+	<anim name="singDOWNmiss" anim="miss" x="3.75" y="2"/>
+	<anim name="singUPmiss" anim="miss"/>
+	<anim name="singLEFTmiss" anim="miss"/>
+	<anim name="singRIGHTmiss" anim="miss"/>
+	<anim name="hey" anim="hey" fps="10"/>
 </character>

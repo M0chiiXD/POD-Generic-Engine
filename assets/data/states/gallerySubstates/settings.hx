@@ -1,7 +1,7 @@
 import flixel.FlxCamera;
 import flixel.text.FlxText.FlxTextBorderStyle;
 
-var windowCam = new FlxCamera();
+var windowCam = new FlxCamera(0, 0, width, height);
 var appCam = new FlxCamera();
 
 var trans:Bool = false;
@@ -11,13 +11,12 @@ var wallpapers:Array<String> = [];
 var clickie:FlxSprite;
 
 function create() {
-	FlxG.sound.music.fadeOut(0.3);
-	
 	windowCam.bgColor = 0x88000000;
 	windowCam.alpha = 1;
 	windowCam.zoom = 0.5;
 	
 	appCam.alpha = 0;
+	appCam.bgColor = 0;
 	
 	trans = true;
 	
@@ -64,8 +63,8 @@ function create() {
 
 var bot = Paths.font("vcr.ttf");
 function postCreate() {
-	FlxG.cameras.add(windowCam, false);
-	FlxG.cameras.add(appCam, false);
+	cameras.push(windowCam);
+	cameras.push(appCam);
 }
 
 function postUpdate(elapsed:Float) {
@@ -88,12 +87,9 @@ function postUpdate(elapsed:Float) {
 function loadApp() {
 	FlxTween.tween(appCam, {alpha: 1}, 0.2, {ease: FlxEase.linear});
 	trans = false;
-	CoolUtil.playMusic(Paths.music("optimalpreformance"));
 }
 
 function closeWindow() {
-	CoolUtil.playMusic(Paths.music("orbindos"));
-	FlxG.sound.music.fadeIn(1);
 	appCam.alpha = 0;
 	FlxTween.tween(windowCam, {alpha: 0}, 0.3, {ease: FlxEase.cubeOut});
 	FlxTween.tween(windowCam, {zoom: 0.5}, 0.3, {ease: FlxEase.cubeOut, 

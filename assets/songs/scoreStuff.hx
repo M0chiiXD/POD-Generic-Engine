@@ -23,14 +23,14 @@ function create(){
 			introLength = 0; 
 		}
 	}
-
-	justPlayed = true;
 }
 
 function onCountdown(event:CountdownEvent) event.cancel();
 function onStrumCreation(_) _.__doAnimation = false;
 
 function postCreate() {
+	justPlayed = true;
+
 	var phant = Paths.font("PhantomMuff.ttf");
 	missesTxt.font = phant;
 	missesTxt.y += 6;
@@ -49,8 +49,8 @@ function postCreate() {
 	doIconBop = false;
 
 	if (downscroll){
-	  healthBarBG?.offset.y = -9;
-	  missesTxt.y = 610;
+		healthBarBG?.offset.y = -9;
+		missesTxt.y = 610;
 	}
 	
 	healthBar.numDivisions = 1000;
@@ -116,7 +116,7 @@ function getSongRank(acc:Int):String {
 public static var lastMenu:String;
 function onSongEnd(event){	
 	// idk guys
-	if (!PlayState.chartingMode){
+	if (!PlayState.chartingMode || !PlayState.isStoryMode) {
 		event.cancel();
 		
 		if (validScore) {

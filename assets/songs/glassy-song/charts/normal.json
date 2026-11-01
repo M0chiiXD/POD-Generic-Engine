@@ -210,6 +210,30 @@
 		},
 		{
 			"params": [
+				false,
+				-1,
+				4,
+				"camHUD"
+			],
+			"time": 75294.1176470588,
+			"name": "Camera Flash"
+		},
+		{
+			"params": [
+				true,
+				0.6,
+				"camGame",
+				4,
+				"circ",
+				"Out",
+				"direct",
+				false
+			],
+			"time": 75294.1176470588,
+			"name": "Camera Zoom"
+		},
+		{
+			"params": [
 				1,
 				true,
 				4,
@@ -717,12 +741,9 @@
 			"time": 160000
 		}
 	],
-	"codenameChart": true,
 	"strumLines": [
 		{
 			"keyCount": 4,
-			"strumScale": 1,
-			"position": "dad",
 			"notes": [
 				{
 					"id": 2,
@@ -3449,23 +3470,23 @@
 					"type": 0
 				}
 			],
+			"position": "dad",
+			"strumScale": 1,
+			"strumSpacing": 1,
+			"visible": true,
+			"type": 0,
 			"characters": [
 				"glassyfhf"
 			],
-			"type": 0,
-			"visible": true,
-			"strumSpacing": 1,
 			"strumPos": [
 				0,
 				50
 			],
-			"strumLinePos": 0.25,
-			"vocalsSuffix": "-Opponent"
+			"vocalsSuffix": "-Opponent",
+			"strumLinePos": 0.25
 		},
 		{
 			"keyCount": 4,
-			"strumScale": 1,
-			"position": "boyfriend",
 			"notes": [
 				{
 					"id": 2,
@@ -5868,30 +5889,33 @@
 					"type": 0
 				}
 			],
+			"position": "boyfriend",
+			"strumScale": 1,
+			"strumSpacing": 1,
+			"visible": true,
+			"type": 1,
 			"characters": [
 				"hatfhf"
 			],
-			"type": 1,
-			"visible": true,
-			"strumSpacing": 1,
 			"strumPos": [
 				0,
 				50
 			],
-			"strumLinePos": 0.75,
-			"vocalsSuffix": "-Player"
+			"vocalsSuffix": "-Player",
+			"strumLinePos": 0.75
 		},
 		{
 			"keyCount": 4,
-			"position": "girlfriend",
 			"notes": [],
+			"position": "girlfriend",
+			"visible": false,
+			"type": 2,
 			"characters": [
 				"gf"
-			],
-			"type": 2,
-			"visible": false
+			]
 		}
 	],
+	"codenameChart": true,
 	"chartVersion": "1.6.0",
 	"scrollSpeed": 3,
 	"stage": "fhf",

@@ -1,9 +1,9 @@
 <!DOCTYPE codename-engine-stage>
 <stage folder="stages/glassy/" name="fhf" zoom="0.6">
 	<sprite x="315" sprite="sky" y="-725" type="none" scalex="5" scaley="8" name="sky"/>
+	<sprite x="-383.449259400211" sprite="sun" y="-1654.88428102099" type="none" scale="0.947443974046577" name="sun"/>
 	<sprite x="312" sprite="grass" y="760" type="none" scalex="5.45" scaley="2.85" name="grass"/>
 	<girlfriend alpha="0" x="437" y="101"/>
 	<dad x="100" y="195"/>
 	<boyfriend x="900" y="195"/>
-	<sprite x="-383.449259400211" sprite="sun" y="-1654.88428102099" type="none" scale="0.947443974046577" name="sun"/>
 </stage>

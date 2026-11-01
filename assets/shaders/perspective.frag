@@ -11,15 +11,16 @@ uniform float iTime;
 //****MAKE SURE TO remove the parameters from mainImage.
 //SHADERTOY PORT FIX
 
+uniform float curve = 3.0;
 
 void mainImage(void)
 {
     // Normalized pixel coordinates (from 0 to 1)
     vec2 uv = fragCoord/iResolution.xy;
     
-    float depth = 3.0f;
+    float depth = curve;
 
-	float dx = distance(uv.x, .5f);
+    float dx = distance(uv.x, .5f);
     float dy = distance(uv.y, .5f);
     
     

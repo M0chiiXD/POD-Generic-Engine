@@ -1,13 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?>
-<TextureAtlas imagePath="brp_runlegs.png">
-	<!-- Created using the Spritesheet and XML generator -->
-	<!-- https://uncertainprod.github.io/FNF-Spritesheet-XML-generator-Web -->
-	<SubTexture name="run0000" x="435" y="150" width="321" height="140" frameX="-199" frameY="-460" frameWidth="640" frameHeight="640"/>
-	<SubTexture name="run0001" x="267" y="445" width="256" height="156" frameX="-227" frameY="-461" frameWidth="640" frameHeight="640"/>
-	<SubTexture name="run0002" x="0" y="290" width="309" height="155" frameX="-155" frameY="-460" frameWidth="640" frameHeight="640"/>
-	<SubTexture name="run0003" x="435" y="0" width="344" height="150" frameX="-160" frameY="-465" frameWidth="640" frameHeight="640"/>
-	<SubTexture name="run0004" x="0" y="0" width="435" height="141" frameX="-136" frameY="-461" frameWidth="640" frameHeight="640"/>
-	<SubTexture name="run0005" x="0" y="141" width="386" height="149" frameX="-160" frameY="-461" frameWidth="640" frameHeight="640"/>
-	<SubTexture name="run0006" x="779" y="0" width="157" height="161" frameX="-252" frameY="-463" frameWidth="640" frameHeight="640"/>
-	<SubTexture name="run0007" x="0" y="445" width="267" height="178" frameX="-201" frameY="-449" frameWidth="640" frameHeight="640"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Created with Heroic Packer v0.1.4 BETA https://heroicpacker.heroeyad.dev/
+-->
+<TextureAtlas imagePath="brp_runlegs.png" width="1240" height="331" spritePadding="3" borderPadding="1">
+	<SubTexture name="run0000" x="1" y="1" width="317" height="136" frameX="-199" frameY="-460" frameWidth="431" frameHeight="174"/>
+	<SubTexture name="run0001" x="321" y="1" width="252" height="152" frameX="-227" frameY="-461" frameWidth="431" frameHeight="174"/>
+	<SubTexture name="run0002" x="576" y="1" width="305" height="151" frameX="-155" frameY="-460" frameWidth="431" frameHeight="174"/>
+	<SubTexture name="run0003" x="884" y="1" width="340" height="146" frameX="-160" frameY="-465" frameWidth="431" frameHeight="174"/>
+	<SubTexture name="run0004" x="1" y="156" width="431" height="137" frameX="-136" frameY="-461" frameWidth="431" frameHeight="174"/>
+	<SubTexture name="run0005" x="435" y="156" width="382" height="145" frameX="-160" frameY="-461" frameWidth="431" frameHeight="174"/>
+	<SubTexture name="run0006" x="820" y="156" width="153" height="157" frameX="-252" frameY="-463" frameWidth="431" frameHeight="174"/>
+	<SubTexture name="run0007" x="976" y="156" width="263" height="174" frameX="-201" frameY="-449" frameWidth="431" frameHeight="174"/>
 </TextureAtlas>

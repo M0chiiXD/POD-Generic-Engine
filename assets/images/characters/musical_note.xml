@@ -1,18 +1,19 @@
-<?xml version="1.0" encoding="utf-8"?>
-<TextureAtlas imagePath="musical_note.png">
-	<!-- Created using the Spritesheet and XML generator -->
-	<!-- https://uncertainprod.github.io/FNF-Spritesheet-XML-generator-Web -->
-	<SubTexture name="musical_note down0000" x="1740" y="0" width="393" height="524" frameX="-110" frameY="-70" frameWidth="640" frameHeight="640"/>
-	<SubTexture name="musical_note down0001" x="0" y="1080" width="395" height="526" frameX="-106" frameY="-66" frameWidth="640" frameHeight="640"/>
-	<SubTexture name="musical_note idle0000" x="395" y="1080" width="398" height="520" frameX="-102" frameY="-73" frameWidth="640" frameHeight="640"/>
-	<SubTexture name="musical_note idle0001" x="1321" y="0" width="419" height="506" frameX="-86" frameY="-87" frameWidth="640" frameHeight="640"/>
-	<SubTexture name="musical_note idle0002" x="793" y="1080" width="398" height="517" frameX="-97" frameY="-76" frameWidth="640" frameHeight="640"/>
-	<SubTexture name="musical_note idle0003" x="395" y="1080" width="398" height="520" frameX="-102" frameY="-73" frameWidth="640" frameHeight="640"/>
-	<SubTexture name="musical_note left0000" x="409" y="531" width="443" height="503" frameX="-38" frameY="-92" frameWidth="640" frameHeight="640"/>
-	<SubTexture name="musical_note left0001" x="890" y="0" width="431" height="512" frameX="-49" frameY="-82" frameWidth="640" frameHeight="640"/>
-	<SubTexture name="musical_note right0000" x="890" y="512" width="396" height="546" frameX="-156" frameY="-50" frameWidth="640" frameHeight="640"/>
-	<SubTexture name="musical_note right0001" x="1321" y="506" width="394" height="537" frameX="-142" frameY="-58" frameWidth="640" frameHeight="640"/>
-	<SubTexture name="musical_note up0000" x="0" y="0" width="440" height="531" frameX="-99" frameY="-63" frameWidth="640" frameHeight="640"/>
-	<SubTexture name="musical_note up0001" x="440" y="0" width="450" height="519" frameX="-94" frameY="-74" frameWidth="640" frameHeight="640"/>
-	<SubTexture name="gulp0000" x="0" y="531" width="409" height="549" frameX="-101" frameY="-64" frameWidth="640" frameHeight="640"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Created with Heroic Packer v0.1.4 BETA https://heroicpacker.heroeyad.dev/
+-->
+<TextureAtlas imagePath="musical_note.png" width="4953" height="547" spritePadding="3" borderPadding="1">
+	<SubTexture name="musical_note down0000" x="2534" y="1" width="389" height="520" frameX="-110" frameY="-70" frameWidth="391" frameHeight="522"/>
+	<SubTexture name="musical_note down0001" x="2926" y="1" width="391" height="522" frameX="-106" frameY="-66" frameWidth="391" frameHeight="522"/>
+	<SubTexture name="musical_note idle0000" x="2137" y="1" width="394" height="516" frameX="-102" frameY="-73" frameWidth="415" frameHeight="516"/>
+	<SubTexture name="musical_note idle0001" x="443" y="1" width="415" height="502" frameX="-86" frameY="-87" frameWidth="415" frameHeight="516"/>
+	<SubTexture name="musical_note idle0002" x="1291" y="1" width="394" height="513" frameX="-97" frameY="-76" frameWidth="415" frameHeight="516"/>
+	<SubTexture name="musical_note idle0003" x="2137" y="1" width="394" height="516" frameX="-102" frameY="-73" frameWidth="415" frameHeight="516"/>
+	<SubTexture name="musical_note left0000" x="1" y="1" width="439" height="499" frameX="-38" frameY="-92" frameWidth="439" frameHeight="508"/>
+	<SubTexture name="musical_note left0001" x="861" y="1" width="427" height="508" frameX="-49" frameY="-82" frameWidth="439" frameHeight="508"/>
+	<SubTexture name="musical_note right0000" x="4152" y="1" width="392" height="542" frameX="-156" frameY="-50" frameWidth="392" frameHeight="542"/>
+	<SubTexture name="musical_note right0001" x="3759" y="1" width="390" height="533" frameX="-142" frameY="-58" frameWidth="392" frameHeight="542"/>
+	<SubTexture name="musical_note up0000" x="3320" y="1" width="436" height="527" frameX="-99" frameY="-63" frameWidth="446" frameHeight="527"/>
+	<SubTexture name="musical_note up0001" x="1688" y="1" width="446" height="515" frameX="-94" frameY="-74" frameWidth="446" frameHeight="527"/>
+	<SubTexture name="gulp0000" x="4547" y="1" width="405" height="545" frameX="-101" frameY="-64" frameWidth="405" frameHeight="545"/>
 </TextureAtlas>

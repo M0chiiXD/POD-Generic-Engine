@@ -136,13 +136,13 @@ function create() {
 	clouds.antialiasing= Options.antialiasing;
 	clouds.camera = bgCam;
 	
-	skybeam = new FunkinSprite(-5, -795, Paths.image('menus/mainmenu/menuBG/menu_beam'));
-	skybeam.setGraphicSize(FlxG.width, FlxG.height * 2);
+	skybeam = new FunkinSprite(-40, -960, Paths.image('menus/mainmenu/menuBG/menu_beam'));
+	skybeam.angle = -0.68;
+ 	skybeam.scale.set(0.72, 0.72);
 	skybeam.addAnim("beam", "beam", 8, true);
 	skybeam.updateHitbox();
 	skybeam.camera = bgCam;
 	skybeam.antialiasing= Options.antialiasing;
-	skybeam.angle = -0.88;
 	skybeam.scrollFactor.set(0.5, 0.85);
 	skybeam.playAnim("beam");
 
@@ -153,12 +153,12 @@ function create() {
 	add(hills);
 
 	var isles = [
-		isle1 = makeIsland("1", 160, -360),
-		isle2 = makeIsland("2", 820, -290),
-		isle3 = makeIsland("3", 860, -560),
-		isle4 = makeIsland("4", 240, -710),
-		isle5 = makeIsland("5", 368, -540),
-		isle6 = makeIsland("6", 790, -730)
+		isle1 = makeIsland("1", 160, -440),
+		isle2 = makeIsland("2", 820, -330),
+		isle3 = makeIsland("3", 860, -600),
+		isle4 = makeIsland("4", 240, -750),
+		isle5 = makeIsland("5", 368, -580),
+		isle6 = makeIsland("6", 790, -780)
 	];
 
 	for (h in isles) h.camera = bgCam;
@@ -199,11 +199,11 @@ function create() {
 	add(introtxt);
 	
 	menuBtns = [
-        makeButton(440, 0, "play"),
-		makeButton(660, 150, "freeplay"),
-		makeButton(430, 380, "credits"),
-		makeButton(120, 200, "gallery"),
-		makeButton(860, 350, "settings")
+        makeButton(480, 30, "play"),
+		makeButton(780, 160, "freeplay"),
+		makeButton(430, 430, "credits"),
+		makeButton(110, 200, "gallery"),
+		makeButton(980, 400, "settings")
     ];
 	
 	for (i in menuBtns) {
@@ -227,7 +227,7 @@ function makeButton(xBtn:Float, yBtn:Float, text:String) {
 	var b = new FunkinSprite(xBtn, yBtn, Paths.image("menus/mainmenu/menubuttons"));
 	b.animation.addByPrefix("idle", "menubuttons " + text + "idle", 5, true);
 	b.animation.addByPrefix("select","menubuttons " + text + "select", 8, false);
-	b.setGraphicSize(250, 250);
+	b.setGraphicSize(180, 180);
 	b.antialiasing = Options.antialiasing;
 	b.updateHitbox();
 	b.scrollFactor.set(0.8, 0.8);
@@ -237,8 +237,8 @@ function makeButton(xBtn:Float, yBtn:Float, text:String) {
     return b;
 }
 
-function makeIsland(spr:String, posX:Int, posY:Int) {
-	var isle = new FlxSprite(posX, posY).loadGraphic(Paths.image('menus/mainmenu/menuBG/island' + spr));
+function makeIsland(num:String, posX:Int, posY:Int) {
+	var isle = new FlxSprite(posX, posY).loadGraphic(Paths.image('menus/mainmenu/menuBG/islands/island' + num));
 	isle.antialiasing = Options.antialiasing;
 	isle.scale.set(0.5, 0.5);
 	isle.scrollFactor.set(0.8, 0.95);
@@ -265,6 +265,7 @@ function beatHit(){
 	logo.scale.set(1.35, 1.35);
 }
 
+var highlight:Int = -1;
 function update(elapsed:Float) {
     if (controls.DEV_ACCESS && Options.devMode) {
         persistentUpdate = false;
@@ -273,9 +274,9 @@ function update(elapsed:Float) {
     }
 	
 	if (controls.ACCEPT && !menuActive && !transitioning) {
-        FlxG.sound.play(Paths.sound("menu/scroll"));
-        openMenu();
-    }
+		FlxG.sound.play(Paths.sound("menu/confirm"));
+		openMenu();
+	}
 	
 	if (controls.BACK && menuActive && !transitioning) {
         FlxG.sound.play(Paths.sound("menu/cancel"));
@@ -287,11 +288,6 @@ function update(elapsed:Float) {
 		persistentUpdate = false;
 		persistentDraw = true;
 	}
-	
-	if (controls.ACCEPT && !menuActive && !transitioning) {
-        FlxG.sound.play(Paths.sound("menu/scroll"));
-        openMenu();
-    }
 	
 	if (FlxG.keys.justPressed.EIGHT) {
         FlxG.switchState(new ModState("Sigmavator"));
@@ -321,15 +317,19 @@ function update(elapsed:Float) {
 				menuBtns[i].angle = 2.3; //where is 2.3 robtop
 				outlineGrp[i].active = true;
 				selectIndex = i;
-				if (FlxG.mouse.justPressed && menuActive) {
+					if (FlxG.mouse.justPressed && menuActive) {
 						transitioning = true;
 						menuBtns[selectIndex].playAnim("select");
-						FlxG.sound.play(Paths.sound("menu/confirm"), 0.6);
+						FlxG.sound.play(Paths.sound("menu/confirm"));
 						tweenMenuBtns(selectIndex);
 						FlxTween.tween(gameCam, {zoom: 1.3}, 1.2, {ease: FlxEase.quartInOut});
 						FlxTween.tween(bgCam, {zoom: 1.5}, 1, {ease: FlxEase.quartInOut});
 						FlxTween.tween(bgCam, {angle: 240}, 2, {ease: FlxEase.circIn});
 						new FlxTimer().start(0.6, ()->{ selectOption(selectIndex); });
+					}
+					if (highlight != i) {
+						FlxG.sound.play(Paths.sound('menu/scroll'));
+						highlight = i;
 					}
 			} else {
 				menuBtns[i].scale.x = lerp(menuBtns[i].scale.x, scale, 0.1);
@@ -341,20 +341,13 @@ function update(elapsed:Float) {
 	}
 }
 
-function updateVFX(elapsed:Float) {
-	var offset1:Float = -10.5;
-	var offset2:Float = -12.0;
-	bgCam.scroll.x = lerp(bgCam.scroll.x, lerp(offset1, FlxG.mouse.screenX, 0.05), 0.15);
-	gameCam.scroll.x = lerp(gameCam.scroll.x, lerp(offset2, FlxG.mouse.screenX, 0.05), 0.15);
-}
-
 function openMenu() {
 	transitioning = true;
 	FlxTween.cancelTweensOf(logo);
 	FlxTween.tween(logo, {y: logo.y + 800}, 0.8, {ease: FlxEase.quartOut});
 	for (i in 0...menuBtns.length)
 		FlxTween.tween(menuBtns[i], {y: menuBtns[i].y + 712}, 1 + i * 0.035, {ease: FlxEase.quartOut});
-	FlxTween.tween(bgCam, {"scroll.y": -850}, 1, {ease: FlxEase.quartOut});
+	FlxTween.tween(bgCam, {"scroll.y": -900}, 1, {ease: FlxEase.quartOut});
 	new FlxTimer().start(1, function(tmr:FlxTimer){ transitioning = false; });
 	skybox.alpha = 1;
 	FlxTween.tween(skybox, {alpha: 0.75}, 1, {ease: FlxEase.circOut});
@@ -374,7 +367,10 @@ function closeMenu() {
 function tweenMenuBtns(elapsed:Float) {
 	for (i in 0...menuBtns.length) {		
 		menuBtns[i].alpha = 0;
-		FlxTween.tween(menuBtns[selectIndex], {x: 520, y: 250}, 1.5, {ease: FlxEase.expoOut});
+		FlxTween.cancelTweensOf(menuBtns[selectIndex]);
+		FlxTween.tween(menuBtns[selectIndex], {
+			x: (FlxG.width - 180) * 0.5,
+			y: (FlxG.height - 180) * 0.5}, 1.15, {ease: FlxEase.expoOut});
 		menuBtns[selectIndex].alpha = 1;
 	}
 }

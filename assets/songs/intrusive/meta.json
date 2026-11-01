@@ -2,9 +2,10 @@
 	"opponentModeAllowed": false,
 	"icon": "face",
 	"difficulties": [
-		"normal"
+		"normal",
+		"evil"
 	],
-	"color": "#9271FD",
+	"color": "#e30022",
 	"coopAllowed": false,
 	"stepsPerBeat": 4,
 	"displayName": "Intrusive",

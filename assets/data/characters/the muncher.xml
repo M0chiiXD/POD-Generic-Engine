@@ -1,5 +1,5 @@
 <!DOCTYPE codename-engine-character>
-<character x="100" y="200" sprite="themuncher" scale="2.4" antialiasing="false" camx="-360" camy="-200" icon="the muncher">
+<character x="100" y="200" sprite="themuncher" scale="2.4" antialiasing="false">
 	<anim name="idle" anim="themuncher idle" fps="7"/>
 	<anim name="singDOWN" anim="themuncher down" fps="16"/>
 	<anim name="singRIGHT" anim="themuncher right" fps="16"/>

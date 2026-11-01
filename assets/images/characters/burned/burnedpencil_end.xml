@@ -1,19 +1,20 @@
-<?xml version="1.0" encoding="utf-8"?>
-<TextureAtlas imagePath="burnedpencil_end.png">
-	<!-- Created using the Spritesheet and XML generator -->
-	<!-- https://uncertainprod.github.io/FNF-Spritesheet-XML-generator-Web -->
-	<SubTexture name="idle0000" x="1989" y="0" width="296" height="549" frameX="-141" frameY="-61" frameWidth="640" frameHeight="640"/>
-	<SubTexture name="idle0001" x="1989" y="549" width="294" height="547" frameX="-142" frameY="-62" frameWidth="640" frameHeight="640"/>
-	<SubTexture name="right0000" x="477" y="0" width="419" height="535" frameX="-102" frameY="-73" frameWidth="640" frameHeight="640"/>
-	<SubTexture name="right0001" x="896" y="0" width="401" height="541" frameX="-102" frameY="-69" frameWidth="640" frameHeight="640"/>
-	<SubTexture name="up0000" x="1297" y="0" width="346" height="587" frameX="-91" frameY="-23" frameWidth="640" frameHeight="640"/>
-	<SubTexture name="up0001" x="1643" y="0" width="346" height="576" frameX="-101" frameY="-36" frameWidth="640" frameHeight="640"/>
-	<SubTexture name="down0000" x="1643" y="576" width="295" height="529" frameX="-142" frameY="-84" frameWidth="640" frameHeight="640"/>
-	<SubTexture name="down0001" x="1989" y="1096" width="296" height="541" frameX="-140" frameY="-71" frameWidth="640" frameHeight="640"/>
-	<SubTexture name="left0000" x="0" y="0" width="477" height="549" frameX="-20" frameY="-61" frameWidth="640" frameHeight="640"/>
-	<SubTexture name="left0001" x="0" y="549" width="431" height="557" frameX="-51" frameY="-55" frameWidth="640" frameHeight="640"/>
-	<SubTexture name="boo0000" x="303" y="1106" width="298" height="548" frameX="-139" frameY="-62" frameWidth="640" frameHeight="640"/>
-	<SubTexture name="boo0001" x="0" y="1106" width="303" height="565" frameX="-137" frameY="-42" frameWidth="640" frameHeight="640"/>
-	<SubTexture name="boo0002" x="477" y="535" width="393" height="557" frameX="-111" frameY="-50" frameWidth="640" frameHeight="640"/>
-	<SubTexture name="boo0003" x="896" y="541" width="372" height="559" frameX="-120" frameY="-48" frameWidth="640" frameHeight="640"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Created with Heroic Packer v0.1.4 BETA https://heroicpacker.heroeyad.dev/
+-->
+<TextureAtlas imagePath="burnedpencil_end.png" width="2486" height="1143" spritePadding="3" borderPadding="1">
+	<SubTexture name="idle0000" x="1290" y="559" width="292" height="545" frameX="-141" frameY="-61" frameWidth="292" frameHeight="545"/>
+	<SubTexture name="idle0001" x="1585" y="559" width="290" height="543" frameX="-142" frameY="-62" frameWidth="292" frameHeight="545"/>
+	<SubTexture name="right0000" x="907" y="1" width="415" height="531" frameX="-102" frameY="-73" frameWidth="415" frameHeight="537"/>
+	<SubTexture name="right0001" x="1717" y="1" width="397" height="537" frameX="-102" frameY="-69" frameWidth="415" frameHeight="537"/>
+	<SubTexture name="up0000" x="1" y="559" width="342" height="583" frameX="-91" frameY="-23" frameWidth="342" frameHeight="583"/>
+	<SubTexture name="up0001" x="346" y="559" width="342" height="572" frameX="-101" frameY="-36" frameWidth="342" frameHeight="583"/>
+	<SubTexture name="down0000" x="2173" y="559" width="291" height="525" frameX="-142" frameY="-84" frameWidth="292" frameHeight="537"/>
+	<SubTexture name="down0001" x="1878" y="559" width="292" height="537" frameX="-140" frameY="-71" frameWidth="292" frameHeight="537"/>
+	<SubTexture name="left0000" x="1" y="1" width="473" height="545" frameX="-20" frameY="-61" frameWidth="473" frameHeight="553"/>
+	<SubTexture name="left0001" x="477" y="1" width="427" height="553" frameX="-51" frameY="-55" frameWidth="473" frameHeight="553"/>
+	<SubTexture name="boo0000" x="993" y="559" width="294" height="544" frameX="-139" frameY="-62" frameWidth="389" frameHeight="561"/>
+	<SubTexture name="boo0001" x="691" y="559" width="299" height="561" frameX="-137" frameY="-42" frameWidth="389" frameHeight="561"/>
+	<SubTexture name="boo0002" x="1325" y="1" width="389" height="553" frameX="-111" frameY="-50" frameWidth="389" frameHeight="561"/>
+	<SubTexture name="boo0003" x="2117" y="1" width="368" height="555" frameX="-120" frameY="-48" frameWidth="389" frameHeight="561"/>
 </TextureAtlas>

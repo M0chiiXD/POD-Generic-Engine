@@ -1,5 +1,5 @@
 <!DOCTYPE codename-engine-character>
-<character sprite="burned/azureball" y="126" scale="0.84" flipX="true" isPlayer="true" color="#000000">
+<character x="-60" y="126" sprite="burned/azureball" scale="0.84" flipX="true" isPlayer="true" icon="azureball" color="#000000">
 	<anim name="idle" anim="azureball idle" fps="6" loop="true"/>
 	<anim name="singDOWN" anim="azureball down" fps="12"/>
 	<anim name="singRIGHT" anim="azureball right" fps="12"/>

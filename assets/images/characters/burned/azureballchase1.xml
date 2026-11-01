@@ -1,25 +1,26 @@
-<?xml version="1.0" encoding="utf-8"?>
-<TextureAtlas imagePath="azureballchase1.png">
-	<!-- Created using the Spritesheet and XML generator -->
-	<!-- https://uncertainprod.github.io/FNF-Spritesheet-XML-generator-Web -->
-	<SubTexture name="idle0000" x="383" y="1274" width="457" height="365" frameX="-94" frameY="-76" frameWidth="640" frameHeight="640"/>
-	<SubTexture name="idle0001" x="477" y="918" width="459" height="353" frameX="-92" frameY="-88" frameWidth="640" frameHeight="640"/>
-	<SubTexture name="idle0002" x="0" y="1710" width="405" height="385" frameX="-129" frameY="-87" frameWidth="640" frameHeight="640"/>
-	<SubTexture name="idle0003" x="1889" y="763" width="356" height="446" frameX="-162" frameY="-80" frameWidth="640" frameHeight="640"/>
-	<SubTexture name="idle0004" x="1533" y="869" width="354" height="395" frameX="-161" frameY="-76" frameWidth="640" frameHeight="640"/>
-	<SubTexture name="idle0005" x="1151" y="452" width="355" height="390" frameX="-172" frameY="-88" frameWidth="640" frameHeight="640"/>
-	<SubTexture name="idle0006" x="1533" y="472" width="355" height="397" frameX="-166" frameY="-87" frameWidth="640" frameHeight="640"/>
-	<SubTexture name="idle0007" x="0" y="1274" width="383" height="436" frameX="-138" frameY="-80" frameWidth="640" frameHeight="640"/>
-	<SubTexture name="right0000" x="575" y="0" width="576" height="354" frameX="-49" frameY="-75" frameWidth="640" frameHeight="640"/>
-	<SubTexture name="right0001" x="0" y="0" width="575" height="446" frameX="-52" frameY="-78" frameWidth="640" frameHeight="640"/>
-	<SubTexture name="right0002" x="398" y="446" width="521" height="355" frameX="-72" frameY="-78" frameWidth="640" frameHeight="640"/>
-	<SubTexture name="down0000" x="0" y="918" width="477" height="356" frameX="-100" frameY="-117" frameWidth="640" frameHeight="640"/>
-	<SubTexture name="down0001" x="840" y="1274" width="460" height="357" frameX="-105" frameY="-114" frameWidth="640" frameHeight="640"/>
-	<SubTexture name="down0002" x="1300" y="1274" width="457" height="357" frameX="-100" frameY="-94" frameWidth="640" frameHeight="640"/>
-	<SubTexture name="up0000" x="1533" y="0" width="356" height="472" frameX="-155" frameY="-77" frameWidth="640" frameHeight="640"/>
-	<SubTexture name="up0001" x="1151" y="0" width="382" height="452" frameX="-135" frameY="-83" frameWidth="640" frameHeight="640"/>
-	<SubTexture name="up0002" x="1889" y="1209" width="380" height="413" frameX="-138" frameY="-96" frameWidth="640" frameHeight="640"/>
-	<SubTexture name="left0000" x="1889" y="0" width="421" height="385" frameX="-125" frameY="-87" frameWidth="640" frameHeight="640"/>
-	<SubTexture name="left0001" x="1889" y="385" width="421" height="378" frameX="-138" frameY="-82" frameWidth="640" frameHeight="640"/>
-	<SubTexture name="left0002" x="0" y="446" width="398" height="472" frameX="-153" frameY="-75" frameWidth="640" frameHeight="640"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Created with Heroic Packer v0.1.4 BETA https://heroicpacker.heroeyad.dev/
+-->
+<TextureAtlas imagePath="azureballchase1.png" width="1822" height="2035" spritePadding="3" borderPadding="1">
+	<SubTexture name="idle0000" x="1" y="709" width="453" height="361" frameX="-94" frameY="-76" frameWidth="455" frameHeight="442"/>
+	<SubTexture name="idle0001" x="1" y="1" width="455" height="349" frameX="-92" frameY="-88" frameWidth="455" frameHeight="442"/>
+	<SubTexture name="idle0002" x="457" y="709" width="401" height="381" frameX="-129" frameY="-87" frameWidth="455" frameHeight="442"/>
+	<SubTexture name="idle0003" x="1469" y="1121" width="352" height="442" frameX="-162" frameY="-80" frameWidth="455" frameHeight="442"/>
+	<SubTexture name="idle0004" x="1" y="1073" width="350" height="391" frameX="-161" frameY="-76" frameWidth="455" frameHeight="442"/>
+	<SubTexture name="idle0005" x="1281" y="732" width="351" height="386" frameX="-172" frameY="-88" frameWidth="455" frameHeight="442"/>
+	<SubTexture name="idle0006" x="354" y="1093" width="351" height="393" frameX="-166" frameY="-87" frameWidth="455" frameHeight="442"/>
+	<SubTexture name="idle0007" x="1087" y="1121" width="379" height="432" frameX="-138" frameY="-80" frameWidth="455" frameHeight="442"/>
+	<SubTexture name="right0000" x="459" y="1" width="572" height="350" frameX="-49" frameY="-75" frameWidth="572" frameHeight="442"/>
+	<SubTexture name="right0001" x="1" y="1489" width="571" height="442" frameX="-52" frameY="-78" frameWidth="572" frameHeight="442"/>
+	<SubTexture name="right0002" x="1034" y="1" width="517" height="351" frameX="-72" frameY="-78" frameWidth="572" frameHeight="442"/>
+	<SubTexture name="down0000" x="457" y="354" width="473" height="352" frameX="-100" frameY="-117" frameWidth="473" frameHeight="353"/>
+	<SubTexture name="down0001" x="933" y="355" width="456" height="353" frameX="-105" frameY="-114" frameWidth="473" frameHeight="353"/>
+	<SubTexture name="down0002" x="1" y="353" width="453" height="353" frameX="-100" frameY="-94" frameWidth="473" frameHeight="353"/>
+	<SubTexture name="up0000" x="1353" y="1566" width="352" height="468" frameX="-155" frameY="-77" frameWidth="378" frameHeight="468"/>
+	<SubTexture name="up0001" x="575" y="1507" width="378" height="448" frameX="-135" frameY="-83" frameWidth="378" frameHeight="468"/>
+	<SubTexture name="up0002" x="708" y="1095" width="376" height="409" frameX="-138" frameY="-96" frameWidth="378" frameHeight="468"/>
+	<SubTexture name="left0000" x="861" y="711" width="417" height="381" frameX="-125" frameY="-87" frameWidth="417" frameHeight="468"/>
+	<SubTexture name="left0001" x="1392" y="355" width="417" height="374" frameX="-138" frameY="-82" frameWidth="417" frameHeight="468"/>
+	<SubTexture name="left0002" x="956" y="1556" width="394" height="468" frameX="-153" frameY="-75" frameWidth="417" frameHeight="468"/>
 </TextureAtlas>

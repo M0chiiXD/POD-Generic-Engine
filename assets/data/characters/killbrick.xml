@@ -1,5 +1,5 @@
 <!DOCTYPE codename-engine-character>
-<character x="20" scale="0.9" camx="-300" camy="180" icon="killbrick" color="#FF007E" holdTime="3">
+<character x="100" y="50" scale="0.88" camx="-300" camy="150" icon="killbrick" color="#FF007E" holdTime="3">
 	<anim name="idle" anim="killbrick idle" x="244.44" y="-166.67" fps="12"/>
 	<anim name="singLEFT" anim="killbrick left" x="245.56" y="-163.33" fps="12"/>
 	<anim name="singDOWN" anim="killbrick down" x="232.22" y="-138.89" fps="12"/>

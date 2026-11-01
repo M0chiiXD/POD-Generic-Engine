@@ -4,5 +4,5 @@
 	<sprite x="15.246795504384" sprite="garb1" y="159.462394720154" type="none" scalex="2.25498440271208" scaley="2.48190724320207" name="garb1"/>
 	<girlfriend scalex="0.999999999979379" x="200.421441963043" scaley="0.999999999935376" y="198.197864408975"/>
 	<dad x="-30" y="150"/>
-	<boyfriend x="640" y="138"/>
+	<boyfriend x="640" y="150"/>
 </stage>

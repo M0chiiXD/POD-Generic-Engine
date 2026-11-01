@@ -23,7 +23,7 @@ function postCreate() {
 	burnedBarBG.updateHitbox();
 	burnedBarBG.cameras = [camHUD];
 	burnedBarBG.screenCenter();
-	burnedBarBG.y = camHUD.downscroll ? FlxG.height - -5 : 465;
+	burnedBarBG.y = 465;
 	
 	
 	burnedBar = new FlxBar(384, 633, FlxBarFillDirection.RIGHT_TO_LEFT, 511, 62, this, 'burnedBarValue', 0, 2, true);

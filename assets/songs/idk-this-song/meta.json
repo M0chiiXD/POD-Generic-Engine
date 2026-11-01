@@ -4,10 +4,10 @@
 	"difficulties": [
 		"normal"
 	],
-	"color": "#9257FF",
+	"color": "#000000",
 	"coopAllowed": true,
 	"stepsPerBeat": 4,
-	"displayName": "idk this world",
+	"displayName": "idk this song",
 	"needsVoices": true,
 	"beatsPerMeasure": 4,
 	"bpm": 148

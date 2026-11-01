@@ -1,13 +1,14 @@
 <!DOCTYPE codename-engine-stage>
 <stage folder="stages/showrunner/" name="showrunner">
+	<girlfriend/>
 	<sprite scrolly="0.95" x="-582" sprite="back" y="-232" type="none" scrollx="0.8" name="back"/>
 	<sprite x="-507" sprite="stage" y="-195" type="none" scalex="1.05" scaley="1.07" name="stage"/>
 	<sprite x="435.577777210914" sprite="piano" y="260.21529547665" name="piano"/>
 	<sprite x="-278.6000717875" sprite="drums" y="226.274169979695" scalex="1.25912608751557" scaley="1.30743773095067" name="drums"/>
-	<girlfriend/>
 	<dad x="130.989335162717" y="113.433216520124"/>
 	<boyfriend x="1005.2981993777" y="139.597979746443"/>
 	<sprite x="-587" sprite="curtainleft" y="-226" type="none" scrollx="0.8" name="curtainleft"/>
 	<sprite x="734" sprite="curtainright" y="-231" type="none" scrollx="0.8" name="curtainright"/>
 	<sprite x="1175.21147033204" sprite="violin" y="-127.279220613579" scalex="0.819929329014606" scaley="0.859457037279692" name="violin"/>
+	<sprite x="-386.621256094896" y="643.417998318312" type="none" angle="-0.036319873276085" scrollx="1.2" name="crowd" sprite="crowd" scalex="1.07132191694714" scaley="1.11290805710898"/>
 </stage>

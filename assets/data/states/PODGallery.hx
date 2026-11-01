@@ -8,8 +8,6 @@ import Date;
 import DateTools;
 import flixel.FlxLayer;
 import curtainsOS.BasicWindow;
-import curtainsOS.OSButton;
-//importScript("data/scripts/test");
 
 var bg:FlxSprite;
 var taskbar:FlxSprite;
@@ -19,14 +17,20 @@ var loadingCam:FlxCamera; // will utilize soon
 
 var transitioning:Bool = false;
 var iconDT:Array<String> = [];
-var blur:CustomShader = new CustomShader("blur");
+
+var selectIndex:Int;
+
+var curtainsBGM:Array<Dynamic> = ["orbindos", "a new", "dream lofi", "nice mean"];
 
 var curWindow;
 var windowArray:Array<Dynamic> = [];
+var windowList:FlxTypedGroup = new FlxSpriteGroup();
+var windowStack:Array = [];
 var windowLayer:FlxLayer;
 
 public static var lastMenu:String;
 public static var justPlayed:Bool;
+public var theme = "bubbly";
 
 function create() {
 	lastMenu = "Gallery";
@@ -35,20 +39,17 @@ function create() {
     FlxG.mouse.visible = true;
 
 	bg = new FlxSprite();
-	bg.loadGraphic(Paths.image("menus/gallery/galleryBGaero"));
-	bg.scale.set(1.2, 1.2);
-	bg.screenCenter();
-    bg.scrollFactor.set(0, 0);
+	setWallpaper();
+	bg.setGraphicSize(FlxG.width, FlxG.height);
+	bg.updateHitbox();
     add(bg);
 
-	var blurFilter = new BlurFilter(4, 4, 1);
-
 	iconDT = [
-		makeIcon(42, 60, "trash", "Trash"),
-		makeIcon(42, 170, "overloke", "Overloke"),
-		makeIcon(42, 280, "metube", "MeTube"),
-		makeIcon(42, 390, "cookie", "Cookie Clicker"),
-		makeIcon(1200, 60, "baldi", "Baldi's Basics"),
+		makeIcon(20, 40, "trash", "Trash"),
+		makeIcon(20, 130, "overloke", "Overloke"),
+		makeIcon(20, 220, "metube", "MeTube"),
+		makeIcon(20, 315, "cookie", "Cookie!"),
+		makeIcon(1200, 40, "baldi", "Baldi"),
 	];
 
 	/* iconTB = [
@@ -56,22 +57,29 @@ function create() {
 	makeTaskbarIcon(120, FlxG.height - 80, "settings")
 	]; */
 
-	blur.strength = 1;
+	add(windowList);
 
-	mainLayer = new FlxCamera();
-	mainLayer.bgColor = 0;
-	topLayer = new FlxCamera();
-	topLayer.bgColor = 0;
-	FlxG.cameras.add(mainLayer, false);
-	FlxG.cameras.add(topLayer, false);
+	appHover = new FlxSprite(0, 0).makeGraphic(80, 80, 0xFF0066cc);
+	appHover.alpha = 0.5;
+	appHover.scrollFactor.set();
+	insert(1, appHover);
+	appHover.alpha = 0;
 
-	taskbar = new FlxSprite();
-	taskbar.y = FlxG.height - 50;
-	taskbar.makeGraphic(FlxG.width, 50, FlxColor.BLACK);
-	taskbar.shader = blur;
+	taskbar = new FlxSprite(0, FlxG.height - 50).makeGraphic(FlxG.width, 50, FlxColor.BLACK);
+	//taskbar.shader = blur;
 	taskbar.scrollFactor.set();
 	taskbar.alpha = 0.65;
 	add(taskbar);
+
+	startBase = new FlxSprite(10, FlxG.height - 75).makeGraphic(70, 70, FlxColor.TRANSPARENT, true);
+	FlxSpriteUtil.drawRoundRectComplex(startBase, 0, 0, 70, 70, 20, 20, 20, 20, 0xFF6d9e9a, null, {smoothing: true});
+	startBase.alpha = 0.5;
+	add(startBase);
+
+	start = new FlxSprite(15, FlxG.height - 70).loadGraphic(Paths.image('curtainsOS/logo'));
+	start.setGraphicSize(60, 60);
+	start.updateHitbox();
+	add(start);
 
 	clock = new FlxText(FlxG.width - 240, FlxG.height - 48, 250, "01:12");
 	clock.setFormat(Paths.font("Segoe/Segoe UI.ttf"), 13.5, FlxColor.WHITE, "center");
@@ -80,40 +88,41 @@ function create() {
 	clock.updateHitbox();
     add(clock);
 
-	CoolUtil.playMusic(Paths.music("orbindos"), false);
+	playBGM(curtainsBGM[FlxG.random.int(0, curtainsBGM.length - 1)]);
 	FlxG.sound.music.fadeIn(1.8, 0, 0.5);
 	galleryOpen = true;
 }
 
-function makeIcon(xBtn:Float, yBtn:Float, text:String, name:String) {
-    var b = new FlxSprite().loadGraphic(Paths.image('menus/gallery/' + text));
-	b.scrollFactor.set(0, 0);
-	b.scale.set(0.6, 0.6);
-	b.updateHitbox();
-	b.x = xBtn;
-	b.y = yBtn;
-	b.alpha = 1;
-    add(b);
-
-	var bt = new FlxText(xBtn - 20, yBtn + 64, 170, name);
-	bt.setFormat("VCR OSD Mono", 22, FlxColor.WHITE, "center");
-	bt.borderStyle = FlxTextBorderStyle.OUTLINE;
-	bt.borderColor = FlxColor.BLACK;
-	bt.borderSize = 1;
-	bt.scrollFactor.set(0, 0);
-	bt.scale.set(0.6, 0.6);
-	bt.updateHitbox();
-	bt.alpha = 1;
-    add(bt);
-
-    return b;
-    return bt;
+function playBGM(bgm:String) {
+	CoolUtil.playMusic(Paths.music("curtainsbgm/" + bgm), false);
 }
 
-function makeTaskbarIcon(xBtn:Float, yBtn:Float, text:String) {
-    var t = new FlxSprite().loadGraphic(Paths.image('menus/gallery/' + text));
+// might make the icons a class instead, idkkkkkk :b
+function makeIcon(xBtn:Float, yBtn:Float, p:String, name:String) {
+    var icon = new FlxSprite(xBtn, yBtn).loadGraphic(Paths.image('curtainsOS/apps/' + p));
+	icon.scrollFactor.set(0, 0);
+	icon.scale.set(0.6, 0.6);
+	icon.updateHitbox();
+    add(icon);
+
+	var title = new FlxText(xBtn - 20, yBtn + 64, 170, name);
+	title.setFormat(Paths.font("Segoe/Segoe UI.ttf"), 22, FlxColor.WHITE, "center");
+	title.borderStyle = FlxTextBorderStyle.OUTLINE;
+	title.borderColor = FlxColor.BLACK;
+	title.borderSize = 1;
+	title.scrollFactor.set(0, 0);
+	title.scale.set(0.6, 0.6);
+	title.updateHitbox();
+    add(title);
+
+    return icon;
+    return title;
+}
+
+function makeTaskbarIcon(xBtn:Float, yBtn:Float, p:String) {
+    var t = new FlxSprite().loadGraphic(Paths.image('curtainsOS/apps/' + p));
 	t.scrollFactor.set(0, 0);
-	t.scale.set(0.63, 0.63);
+	t.setGraphicSize(80, 80);
 	t.updateHitbox();
 	t.x = xBtn;
 	t.y = yBtn;
@@ -122,40 +131,62 @@ function makeTaskbarIcon(xBtn:Float, yBtn:Float, text:String) {
     return t;
 }
 
-var galleryOpen = false;
+var galleryOpen = true;
+var osDebug = true;
+
+var openStartMenu = false;
 
 public static var wallpaper:String = "aero";
 
+var clicks = 0;
+var hovered = false;
 function postUpdate(elapsed:Float){
 	clock.text = DateTools.format(Date.now(), "%H:%M %p\n%m/%d/%Y");
 
-	if (FlxG.mouse.justPressed) {
-		FlxG.sound.play(Paths.sound("gallery/click"));
-	}
+	if (FlxG.mouse.justPressed) FlxG.sound.play(Paths.sound("gallery/click"));
 
-	if (galleryOpen){
-		for (i in 0...iconDT.length) {
-			if (FlxG.mouse.overlaps(iconDT[i]) && !transitioning) {
-				iconDT[i].scale.set(0.63, 0.63);
+	//if (!galleryOpen) return;
+
+	for (i in 0...iconDT.length) {
+		if (FlxG.mouse.overlaps(iconDT[i])) {
+			appHover.setPosition(iconDT[i].x + ((iconDT[i].width - 80) * 0.45), iconDT[i].y);
+			if (selectIndex != i) clicks = 0;
+			if (FlxG.mouse.justPressed && FlxG.mouse.overlaps(appHover)) {
+				hovered = true;
 				selectIndex = i;
-					if (FlxG.mouse.justPressed) {
-						selectApp(selectIndex);
-					}
-			} else {
-				iconDT[i].scale.x = lerp(iconDT[i].scale.x, 0.6, 0.1);
-				iconDT[i].scale.y = lerp(iconDT[i].scale.y, 0.6, 0.1);
-				hovered = false;
+				if (i == 4) ding();
+				else clicks++;
 			}
-	}
-
-	for (i in 0...windowArray.length) {
-		if (FlxG.mouse.overlaps(windowArray[i]) && FlxG.mouse.pressed) {
-			var thinkg = windowArray[i];
-			remove(thinkg);
-			add(thinkg);
+			if (clicks == 2) {
+				selectApp(selectIndex);
+				clicks = 0;
+			}
+			if (clicks == 0) appHover.alpha = 0.2;
+			else if (clicks > 0) appHover.alpha = 0.355;
+		} else if (!FlxG.mouse.overlaps(appHover)) {
+			if (dings != 0) dings = 0;
+			clicks = 0;
+			if (FlxG.mouse.justPressed) appHover.alpha = 0;
+			hovered = false;
 		}
 	}
 
+	//trackWindows();
+
+
+	if (FlxG.mouse.overlaps(start) && !openStartMenu) {
+		start.scale.x = 0.18;
+		start.scale.y = 0.18;
+		if (FlxG.mouse.justPressed) {
+			openStartMenu = true;
+		}
+	} else if (!FlxG.mouse.overlaps(start) || openStartMenu) {
+		start.scale.x = lerp(start.scale.x, 0.175, 0.15);
+		start.scale.y = lerp(start.scale.y, 0.175, 0.15);
+		if (FlxG.mouse.justPressed && !FlxG.mouse.overlaps(startBase)) {
+			openStartMenu = false;
+		}
+	}
 
 /*	for (i in 0...iconTB.length) {
         if (FlxG.mouse.overlaps(iconTB[i]) && !transitioning) {
@@ -182,29 +213,53 @@ function postUpdate(elapsed:Float){
 	if (controls.BACK) {
 		FlxG.switchState(new MainMenuState());
 	}
-  }
+
+	if (osDebug) handleDebugControls();
 }
+
+function handleDebugControls() {
+	if (FlxG.keys.justPressed.ONE) {
+		theme = "aero";
+		setWallpaper();
+	} else if (FlxG.keys.justPressed.TWO) {
+		theme = "epic";
+		setWallpaper();
+	} else if (FlxG.keys.justPressed.THREE) {
+		theme = "bubbly";
+		setWallpaper();
+	} else if (FlxG.keys.justPressed.FIVE) {
+		openStartMenu = false;
+	} else if (FlxG.keys.justPressed.EIGHT) runWindow("applications/dialogtest", true);
+}
+
+/*function trackWindows() {
+	for (i in 0...windowList.members.length) {
+		if (windowList == null) return;
+		if (FlxG.mouse.overlaps(windowList.members[i]) && FlxG.mouse.pressed) {
+			dragWindow(windowList.members[i]);
+		}
+	}
+}*/
 
 function selectApp(index:Int){
 	persistentUpdate = !(persistentDraw = true);
 	switch (index) {
-		case 0: runWindow("Trash Bin");
-		case 1: openSubState(new ModSubState("gallerySubstates/overloke"));
-		case 2: openSubState(new ModSubState("gallerySubstates/overloke"));
-		case 3: openSubState(new ModSubState("gallerySubstates/clicker"));
-		case 4: ding();
+		case 0: runWindow("applications/trash");
+		case 1: runWindow("applications/overloke");
+		case 2: runWindow("applications/test2");
+		case 3: runWindow("applications/clicker");
 	}
 }
 
-function runWindow(title:String) {
-	var window = new BasicWindow(50, 30, 864, 490, title);
-	window.scale.set(0.9, 0.9);
-	add(window);
+function runWindow(path:String, ?dialog:Bool) {
+	if (!dialog || dialog == null) var win = new BasicWindow(path, windowList);
+	else var win = new BasicWindow(path, windowList, 300, 340);
+	windowList.add(win);
+	return(win);
+}
 
-	window.borderColor = FlxColor.GREEN;
-	FlxTween.tween(window, {"scale.x": 1, "scale.y": 1}, 0.25, {ease: FlxEase.circOut});
-	windowArray.push(window);
-	return(window);
+function setWallpaper() {
+	bg.loadGraphic(Paths.image("curtainsOS/themes/" + theme));
 }
 
 var dings:Int = 0;
@@ -213,5 +268,5 @@ function ding() {
 	FlxG.sound.play(Paths.sound("gallery/baldi/ow" + FlxG.random.int(1, 5)));
 	FlxG.camera.shake(0.001, 0.1, null, true, FlxAxes.XY);
 	dings++;
-	trace("ding!");
+	trace("ding!", dings);
 }

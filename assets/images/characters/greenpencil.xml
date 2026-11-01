@@ -1,15 +1,19 @@
-<?xml version='1.0' encoding='utf-8'?>
-<TextureAtlas imagePath="greenpencil.png"><SubTexture name="greenpencil idle0000" x="0" y="0" width="772" height="772" frameX="0" frameY="0" frameWidth="772" frameHeight="772" />
-<SubTexture name="greenpencil idle0001" x="772" y="0" width="772" height="772" frameX="0" frameY="0" frameWidth="772" frameHeight="772" />
-<SubTexture name="greenpencil left0000" x="1544" y="0" width="772" height="772" frameX="0" frameY="0" frameWidth="772" frameHeight="772" />
-<SubTexture name="greenpencil left0001" x="0" y="772" width="772" height="772" frameX="0" frameY="0" frameWidth="772" frameHeight="772" />
-<SubTexture name="greenpencil up0000" x="772" y="772" width="772" height="772" frameX="0" frameY="0" frameWidth="772" frameHeight="772" />
-<SubTexture name="greenpencil up0001" x="1544" y="772" width="772" height="772" frameX="0" frameY="0" frameWidth="772" frameHeight="772" />
-<SubTexture name="greenpencil up0002" x="0" y="1544" width="772" height="772" frameX="0" frameY="0" frameWidth="772" frameHeight="772" />
-<SubTexture name="greenpencil up0003" x="772" y="1544" width="772" height="772" frameX="0" frameY="0" frameWidth="772" frameHeight="772" />
-<SubTexture name="greenpencil up0004" x="1544" y="1544" width="772" height="772" frameX="0" frameY="0" frameWidth="772" frameHeight="772" />
-<SubTexture name="greenpencil down0000" x="0" y="2316" width="772" height="772" frameX="0" frameY="0" frameWidth="772" frameHeight="772" />
-<SubTexture name="greenpencil down0001" x="772" y="2316" width="772" height="772" frameX="0" frameY="0" frameWidth="772" frameHeight="772" />
-<SubTexture name="greenpencil right0000" x="1544" y="2316" width="772" height="772" frameX="0" frameY="0" frameWidth="772" frameHeight="772" />
-<SubTexture name="greenpencil right0001" x="0" y="3088" width="772" height="772" frameX="0" frameY="0" frameWidth="772" frameHeight="772" />
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Created with Heroic Packer v0.1.4 BETA https://heroicpacker.heroeyad.dev/
+-->
+<TextureAtlas imagePath="greenpencil.png" width="5424" height="1549" spritePadding="3" borderPadding="1">
+	<SubTexture name="greenpencil idle0000" x="776" y="1" width="772" height="772" frameX="0" frameY="0" frameWidth="772" frameHeight="772"/>
+	<SubTexture name="greenpencil idle0001" x="776" y="776" width="772" height="772" frameX="0" frameY="0" frameWidth="772" frameHeight="772"/>
+	<SubTexture name="greenpencil left0000" x="1551" y="1" width="772" height="772" frameX="0" frameY="0" frameWidth="772" frameHeight="772"/>
+	<SubTexture name="greenpencil left0001" x="1551" y="776" width="772" height="772" frameX="0" frameY="0" frameWidth="772" frameHeight="772"/>
+	<SubTexture name="greenpencil up0000" x="3101" y="1" width="772" height="772" frameX="0" frameY="0" frameWidth="772" frameHeight="772"/>
+	<SubTexture name="greenpencil up0001" x="3101" y="776" width="772" height="772" frameX="0" frameY="0" frameWidth="772" frameHeight="772"/>
+	<SubTexture name="greenpencil up0002" x="3876" y="1" width="772" height="772" frameX="0" frameY="0" frameWidth="772" frameHeight="772"/>
+	<SubTexture name="greenpencil up0003" x="3876" y="776" width="772" height="772" frameX="0" frameY="0" frameWidth="772" frameHeight="772"/>
+	<SubTexture name="greenpencil up0004" x="4651" y="1" width="772" height="772" frameX="0" frameY="0" frameWidth="772" frameHeight="772"/>
+	<SubTexture name="greenpencil down0000" x="1" y="1" width="772" height="772" frameX="0" frameY="0" frameWidth="772" frameHeight="772"/>
+	<SubTexture name="greenpencil down0001" x="1" y="776" width="772" height="772" frameX="0" frameY="0" frameWidth="772" frameHeight="772"/>
+	<SubTexture name="greenpencil right0000" x="2326" y="1" width="772" height="772" frameX="0" frameY="0" frameWidth="772" frameHeight="772"/>
+	<SubTexture name="greenpencil right0001" x="2326" y="776" width="772" height="772" frameX="0" frameY="0" frameWidth="772" frameHeight="772"/>
 </TextureAtlas>

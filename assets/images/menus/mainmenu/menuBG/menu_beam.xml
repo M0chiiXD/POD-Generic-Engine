@@ -1,9 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
-<TextureAtlas imagePath="menu_beam.png">
-	<!-- Created using the Spritesheet and XML generator -->
-	<!-- https://uncertainprod.github.io/FNF-Spritesheet-XML-generator-Web -->
-	<SubTexture name="beam0000" x="732" y="2143" width="615" height="2142" frameX="-610" frameY="2" frameWidth="1914" frameHeight="2266"/>
-	<SubTexture name="beam0001" x="0" y="2143" width="732" height="2150" frameX="-605" frameY="2" frameWidth="1914" frameHeight="2266"/>
-	<SubTexture name="beam0002" x="809" y="0" width="766" height="2142" frameX="-541" frameY="2" frameWidth="1914" frameHeight="2266"/>
-	<SubTexture name="beam0003" x="0" y="0" width="809" height="2143" frameX="-539" frameY="2" frameWidth="1914" frameHeight="2266"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Created with Heroic Packer v0.1.4 BETA https://heroicpacker.heroeyad.dev/
+-->
+<TextureAtlas imagePath="menu_beam.png" width="2148" height="2917" spritePadding="3" borderPadding="1">
+	<SubTexture name="beam0000" x="1" y="2305" width="2138" height="611" rotated="true" frameX="-612" frameY="0" frameWidth="809" frameHeight="2150"/>
+	<SubTexture name="beam0001" x="1" y="1" width="2146" height="728" rotated="true" frameX="-607" frameY="0" frameWidth="809" frameHeight="2150"/>
+	<SubTexture name="beam0002" x="1" y="1540" width="2138" height="762" rotated="true" frameX="-543" frameY="0" frameWidth="809" frameHeight="2150"/>
+	<SubTexture name="beam0003" x="1" y="732" width="2139" height="805" rotated="true" frameX="-541" frameY="0" frameWidth="809" frameHeight="2150"/>
 </TextureAtlas>

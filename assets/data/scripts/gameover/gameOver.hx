@@ -7,9 +7,19 @@ static var burnedvar:String;
 
 lossSFX = null;
 
+var garbulous:Array = ["fun-and-silly", "whos-that"];
+
 var path = "deaths/" + PlayState.SONG.meta.name;
 
 function create(e) {
+	for (cur in garbulous) {
+		if (PlayState.SONG.meta.name.toLowerCase() == cur) {
+		//	e.cancel();
+
+		//	connorGameOver();
+		}
+	}
+
 	if (Assets.exists(Paths.video(path))) {
 		if (gameover.load(Paths.video(path))) gameover.play();
 		e.cancel();
@@ -20,6 +30,10 @@ function create(e) {
 			gameover.play();
 			FlxG.addChildBelowMouse(gameover);
 	}
+}
+
+function connorGameOver() {
+	//ill do it laterrrrrrrrrhhhh
 }
 
 function update() {

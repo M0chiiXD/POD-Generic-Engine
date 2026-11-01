@@ -1,1 +1,7 @@
-<!DOCTYPE codename-engine-stage><stage folder="stages/idkthissong/" name="idkthissong"><sprite type="none" sprite="everymind" name="sprite_5"/><sprite type="none" sprite="skybox" name="sprite_3"/><sprite type="none" sprite="girlbg" name="sprite_4"/><girlfriend x="1387" y="708"/><dad x="1056" y="662"/><boyfriend x="2066.99999999983" y="692.999999999953"/></stage>
+<!DOCTYPE codename-engine-stage><stage startCamPosY="100" folder="stages/idkthissong/" startCamPosX="-100" name="idkthissong">
+	<sprite type="none" sprite="skybox" name="sprite_3" scale="1.5"/>
+	<sprite type="none" sprite="girlbg" name="sprite_4"/>
+	<girlfriend x="1387" y="708"/>
+	<dad x="1040" y="680"/>
+	<boyfriend x="2066.99999999983" y="692.999999999953"/>
+</stage>

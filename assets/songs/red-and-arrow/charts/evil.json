@@ -447,7 +447,7 @@
 			"strumSpacing": 1,
 			"type": 0,
 			"characters": [
-				"red arrow"
+				"redarrow"
 			],
 			"strumPos": [
 				0,
@@ -586,7 +586,7 @@
 			"visible": true,
 			"type": 1,
 			"characters": [
-				"bf_pio"
+				"speechbubbl"
 			],
 			"strumPos": [
 				0,
