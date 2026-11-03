@@ -4,8 +4,8 @@ import openfl.display.BlendMode;
 
 import flixel.FlxCamera.FlxCameraFollowStyle;
 import flixel.addons.display.FlxBackdrop;
-import flixel.effects.particles.FlxTypedEmitter;
-import flixel.effects.particles.FlxParticle;
+//import flixel.effects.particles.FlxTypedEmitter;
+//import flixel.effects.particles.FlxParticle;
 
 import funkin.backend.MusicBeatState;
 import funkin.menus.credits.CreditsMain;
@@ -95,7 +95,7 @@ function create() {
 	floor.antialiasing= Options.antialiasing;
 	floor.camera = bgCam;
 	
-	rockLock = new FlxTypedEmitter(-100, 800, 40);
+	/*rockLock = new FlxTypedEmitter(-100, 800, 40);
 	rockLock.keepScaleRatio = true;
 	rockLock.angle.set(5, 8, 10, 26, 80, 12);
 	rockLock.angularVelocity.set(-10, 5);
@@ -111,7 +111,7 @@ function create() {
 		particle.scrollFactor(1.5, 1);
 		rockLock.add(particle);
 	}
-	rockLock.start(false, 1, 0);
+	rockLock.start(false, 1, 0);*/
 	
 	rightBuildings = new FlxSprite(1, -720).loadGraphic(Paths.image('menus/mainmenu/menuBG/rightBuilding'));
 	rightBuildings.setGraphicSize(FlxG.width, FlxG.height * 2);
@@ -171,7 +171,7 @@ function create() {
 	FlxTween.tween(clouds, {y: clouds.y - 15}, 1.6, {type: FlxTween.PINGPONG, ease: FlxEase.sineInOut});
 
 	add(skybeam);
-	add(rockLock);
+	//add(rockLock);
 	add(clouds);
 	add(floor);
 	add(rightBuildings);
@@ -282,12 +282,6 @@ function update(elapsed:Float) {
         FlxG.sound.play(Paths.sound("menu/cancel"));
 		closeMenu();
     }
-	
-	if (controls.SWITCHMOD) {
-		openSubState(new ModSwitchMenu());
-		persistentUpdate = false;
-		persistentDraw = true;
-	}
 	
 	if (FlxG.keys.justPressed.EIGHT) {
         FlxG.switchState(new ModState("Sigmavator"));

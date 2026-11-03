@@ -1,5 +1,4 @@
 import hxvlc.flixel.FlxVideoSprite;
-import hxvlc.util.Handle;
 import flixel.util.FlxArrayUtil;
 
 // if this isnt bullshit i dont know what is -myra
@@ -28,15 +27,12 @@ class VideoUtil {
 		var dynamic = dynamic;
 		var paths = paths;
 
-		Handle.init([]); //no clue if this does anything tbh
-
 		for (vid in paths) {
 			var camera = camera;
 			var options = options;
 			var loop:Bool = false;
 
 			var video:FlxVideoSprite = new FlxVideoSprite();
-			video.load(Paths.video(vid), options);
 			video.camera = camera;
 			video.bitmap.onFormatSetup.add(function() {
 				if (!dynamic) {
@@ -48,12 +44,9 @@ class VideoUtil {
 
 			videoList.push(video);
 
-			if (video != null && video.bitmap != null) {
-				video.play();
-				video.pause();
-				video?.bitmap?.time = 0;
-				trace("Loaded Video: " + vid);
-			}
+			video.bitmap.precache(Paths.video(vid), options);
+			video?.bitmap?.time = 0;
+			trace("Loaded Video: " + vid);
 
 			video.bitmap.onEndReached.add(function() {
 				destroyCur();

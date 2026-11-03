@@ -61,14 +61,14 @@
 	<!-- <define name="STRIPPED_COMPILE" unless="debug"/> -->
 
 	<!-- Comment this out to disable modcharting features -->
-	<define name="MODCHARTING_FEATURES" unless="STRIPPED_COMPILE" />
+	<!-- <define name="MODCHARTING_FEATURES" unless="STRIPPED_COMPILE" /> -->
 
 	<!-- Comment this out to disable GitHub API integration !-->
 	<define name="GITHUB_API" unless="web || hl"/>
 
 	<!-- Comment this out to prevent unused classes from being compiled.
 		 Reduces compilation time at the cost of limited HScript flexibility. !-->
-	<define name="COMPILE_ALL_CLASSES" unless="STRIPPED_COMPILE" />
+	<!-- <define name="COMPILE_ALL_CLASSES" unless="STRIPPED_COMPILE" /> -->
 
 	<!-- Comment this out to prevent extending classes in hscript.
 		 Reduces compilation time at the cost of limited HScript flexibility. !-->
@@ -132,15 +132,15 @@
 	<haxelib name="flixel-addons" />
 
 	<haxelib name="hxvlc" if="VIDEO_CUTSCENES" />
-	<haxelib name="away3d" if="THREE_D_SUPPORT"/>
+	<!-- <haxelib name="away3d" if="THREE_D_SUPPORT"/> -->
 	<haxelib name="foxlite" if="THREE_D_SUPPORT"/>
-	<haxelib name="format" />
+	<!-- <haxelib name="format" /> -->
 	<haxelib name="flixel-animate" />
 	<haxelib name="nape-haxe4" if="NAPE_ENABLED"/>
 
 	<haxelib name="hscript-improved" />
 	<haxelib name="hxdiscord_rpc" if="DISCORD_RPC"/>
-	<haxelib name="markdown" />
+	<!-- <haxelib name="markdown" /> -->
 	<haxelib name="hxcpp-debug-server" if="TEST_BUILD debug" />
 
 	<!-- _____________________________ Path Settings ____________________________ -->
@@ -196,7 +196,7 @@
 	<haxedef name="openfl_dpi_aware" if="openfl_dpi_aware" />
 
 	<!-- Disable it for more concise compilation errors. -->
-	<haxedef name="message.reporting" value="pretty" />
+	<!-- <haxedef name="message.reporting" value="pretty" /> -->
 
 	<!-- _________________________________ Custom _______________________________ -->
 

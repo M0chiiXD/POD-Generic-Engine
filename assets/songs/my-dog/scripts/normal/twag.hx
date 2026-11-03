@@ -1,6 +1,6 @@
 import flixel.text.FlxText;
-import flixel.effects.particles.FlxTypedEmitter;
-import flixel.effects.particles.FlxParticle;
+//import flixel.effects.particles.FlxTypedEmitter;
+//import flixel.effects.particles.FlxParticle;
 
 importScript("data/scripts/squareResize");
 
@@ -92,33 +92,34 @@ function onSongStart() {
 }
 
 function stepHit(curStep:Int) {
-    if (curStep == 504) {
-        blackOverlay.alpha = 1;
-    } else if (curStep == 524) {
-        switchChar(1);
-		blackOverlay.alpha = 0.5;
-    } else if (curStep == 1052) {
-        switchChar(0);
-		blackOverlay.alpha = 0;
-    } else if (curStep == 1324) {
-		switchChar(1);
-        blackOverlay.alpha = 0.5;
-    } else if (curStep == 1436) {
-        blackOverlay.alpha = 0.7;
-    } else if (curStep == 1564) {
-        blackOverlay.alpha = 0.5;
-		guitar.visible = true;
-		FlxTween.tween(guitar, {y: 300}, 2, {ease: FlxEase.quadOut});
-    } else if (curStep == 1692) {
-		FlxTween.tween(guitar, {alpha: 0}, 2, {ease: FlxEase.quadOut});
-    } else if (curStep == 1836) {
-        blackOverlay.alpha = 1;
-		killEveryone();
-    } else if (curStep == 128) {
-		FlxTween.tween(titlecard, {x: 200}, 1, {ease: FlxEase.linear});
-    } else if (curStep == 168) {
-		FlxTween.tween(titlecard, {x: 900, y: -1200}, 1, {ease: FlxEase.linear});
-    }
+	switch (curStep) {
+		case 504:
+			blackOverlay.alpha = 1;
+		case 524:
+			switchChar(1);
+			blackOverlay.alpha = 0.5;
+		case 1052:
+			switchChar(0);
+			blackOverlay.alpha = 0;
+		case 1324:
+			switchChar(1);
+			blackOverlay.alpha = 0.5;
+		case 1436:
+			blackOverlay.alpha = 0.7;
+		case 1564:
+			blackOverlay.alpha = 0.5;
+			guitar.visible = true;
+			FlxTween.tween(guitar, {y: 300}, 2, {ease: FlxEase.quadOut});
+		case 1692:
+			FlxTween.tween(guitar, {alpha: 0}, 2, {ease: FlxEase.quadOut});
+		case 1836:
+			blackOverlay.alpha = 1;
+			guitar.destroy();
+		case 128:
+			FlxTween.tween(titlecard, {x: 200}, 1, {ease: FlxEase.linear});
+		case 168:
+			FlxTween.tween(titlecard, {x: 900, y: -1200}, 1, {ease: FlxEase.linear});
+	}
 }
 
 function switchChar(struh:Int) {
@@ -127,8 +128,4 @@ function switchChar(struh:Int) {
 	} else if (struh == 1){
 		iconP2.setIcon("averyevil");
 	}
-}
-
-function killEveryone() {
-	guitar.destroy();
 }

@@ -14,6 +14,7 @@ static var AspectUtil = new AspectUtil();
 static var VideoUtil = new VideoUtil();
 
 importScript('data/scripts/genericFPSCounter');
+importScript('data/scripts/windowResize');
 
 function new() {
     FlxG.save.data.camStable ??= false;

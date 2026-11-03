@@ -1,1 +1,0 @@
-Here you'll put every custom note scripts u have made. For example, in the chart if i make a note named "ballsNote", here you gotta create a script named "ballsNote.hx".

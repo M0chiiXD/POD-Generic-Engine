@@ -36,14 +36,6 @@ class OptionsMenu extends TreeMenu {
 			icon: 'appearance',
 			state: AppearanceOptions
 		},
-		#if TRANSLATIONS_SUPPORT
-		{
-			name: 'optionsTree.language-name',
-			desc: 'optionsTree.language-desc',
-			icon: 'default',
-			state: LanguageOptions
-		},
-		#end
 		{
 			name: 'optionsTree.miscellaneous-name',
 			desc: 'optionsTree.miscellaneous-desc',

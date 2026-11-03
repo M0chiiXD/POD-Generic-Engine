@@ -12,7 +12,7 @@ enum abstract AssetSource(Null<Int>)/* from Null<Bool>*/ from Null<Int> to Null<
 			case "source": SOURCE;
 			case "mods": MODS;
 			case "both": BOTH;
-			default: MODS;
+			default: SOURCE;
 		}
 	}
 
@@ -34,7 +34,7 @@ enum abstract AssetSource(Null<Int>)/* from Null<Bool>*/ from Null<Int> to Null<
 			case SOURCE: "source";
 			case MODS: "mods";
 			case BOTH: "both";
-			default: "mods";
+			default: "source";
 		}
 	}
 }
