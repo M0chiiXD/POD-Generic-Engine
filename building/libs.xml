@@ -3,7 +3,8 @@
 	<if cond="update || all">
 	<print pretty="true">Preparing installation...</print>
 
-		<!-- OpenFL & Lime (Required for Flixel) -->
+		<!-- Hxcpp, OpenFL & Lime (Required for Flixel) -->
+		<git name="hxcpp" url="https://github.com/CodenameCrew/cne-hxcpp"/>
 		<lib name="openfl" version="9.5.2"/>
 		<lib name="lime" version="8.3.2"/>
 
@@ -31,9 +32,6 @@
 		<!-- For building lime -->
 		<lib global="true" name="hxp" /> <lib name="hxp" />
 		<lib global="true" name="format" /> <lib name="format" />
-
-		<git name="hxcpp" url="https://github.com/CodenameCrew/cne-hxcpp" ref="old" />
-
 		<git name="flixel-animate" url="https://github.com/CodenameCrew/cne-flixel-animate/" ref="old" skipDeps="true"/>
 		</if>
 
