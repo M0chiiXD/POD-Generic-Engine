@@ -1,7 +1,7 @@
 # Generic Engine
 Generic Engine is a fork of Codename Engine built specifically for "FNF: Pack of DOOM". 
 
-This Engine is mainly built for optimization, testing, and other purposes.
+This repository is only public for testing purposes.
 
 > [!NOTE]
 > Generic Engine is NOT meant for commercial/modding use outside of Pack of DOOM. Please do not use this engine for your own mods without our permission. 
@@ -12,12 +12,13 @@ This Engine is mainly built for optimization, testing, and other purposes.
 <details>
   <summary><h2>Features</h2></summary>
 
-* Lightweight build with less unnecessary files!
+* A Lightweight Build with Less Unnecessary Files!
 * Custom Utilities/Utils for specific things
-* Compart FPS/Debug Counter
+* An Awesome and Compact FPS/Debug Counter
 * Pack of DOOM supported
-* Mod/DLC Support in the form of "Packs" (planned) 
-* Full Modding Guide for Packs and Lobby Characters! (planned)
+* Fully supported Mac and Linux native builds! (WIP) 
+* Mod/DLC Support in the form of "Packs" (PLANNED) 
+* A Full Modding Guide for DLC Packs and Lobby Characters! (PLANNED)
 </details>
 
 <details>
@@ -34,6 +35,7 @@ This Engine is mainly built for optimization, testing, and other purposes.
 - You may NOT use the engine directly for your own mod, as it is only meant for Pack of DOOM and possibly other HyperGeneric projects. 
 - You may NOT fork our engine without permission. 
 - You may NOT steal our code (seriously please don't).
+- You may NOT port this mod or engine to mobile or other platforms. Please, don't do it. 
 </details>
 
 <details>
@@ -41,6 +43,6 @@ This Engine is mainly built for optimization, testing, and other purposes.
 
 - Credits to Codename Crew for making Codename Engine, find them [HERE!](https://github.com/CodenameCrew/CodenameEngine/graphs/contributors)
 - Credits to [Funkin Crew](https://github.com/FunkinCrew) for making Friday Night Funkin'
-- Credits to the Troll Engine devs for inspiration for the packs system
+- Credits to the Troll Engine devs for inspiration for the packs system (WIP) 
 - Special thanks to Connor for being Connor
 </details>
